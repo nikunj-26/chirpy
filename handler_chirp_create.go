@@ -35,6 +35,7 @@ func (cfg *apiConfig) handlerCreateChirp(w http.ResponseWriter, r *http.Request)
 	userId, err := auth.ValidateJWT(tokenString, cfg.jwtSecret)
 	if err != nil {
 		respondWithError(w, http.StatusUnauthorized, "invalid jwt token", err)
+		return
 	}
 
 	var params parameters
