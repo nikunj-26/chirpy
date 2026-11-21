@@ -8,7 +8,7 @@ import (
 
 func (cfg *apiConfig) handlerGetChirp(w http.ResponseWriter, r *http.Request) {
 
-	chirpId, err := uuid.Parse(r.PathValue("chirpId"))
+	chirpId, err := uuid.Parse(r.PathValue("chirpID"))
 	if err != nil {
 		respondWithError(w, http.StatusBadRequest, "error parsing chirpId", err)
 	}
